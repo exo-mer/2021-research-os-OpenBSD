@@ -111,7 +111,9 @@ for file in *.sh; do cat $file; done
 
 ##### Sources
 [OpenBSD manual page server](https://man.openbsd.org/man)
+
 [Unix Text Processing Command Reference](https://github.com/nschneid/unix-text-commands)
+
 [OpenBSD on wikibooks](https://de.wikibooks.org/wiki/OpenBSD/_Systemprogramme)
 
 ##### More sources and additional reading
