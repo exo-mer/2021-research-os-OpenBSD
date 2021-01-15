@@ -111,7 +111,7 @@ for file in *.sh; do cat $file; done
 
 ### hash, sign, check crypt
 ```
-sha256 -c <SOME-SHA256SUMS> # check for a valid signature for a present file in <SOME-SHA256SUMS>
+$ sha256 -c <SOME-SHA256SUMS>				# check for a valid signature for a present file in <SOME-SHA256SUMS>
 ```
 
 ##### Sources
