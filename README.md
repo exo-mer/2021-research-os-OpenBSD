@@ -127,3 +127,4 @@ $ sha256 -c <SOME-SHA256SUMS>				# check for a valid signature for a present fil
 + [Ubuntu HowToSHA256SUM](https://help.ubuntu.com/community/HowToSHA256SUM)
 + [ubuntuusers Deutschland e.V.](https://wiki.ubuntuusers.de/man/)
 + [stackexchange standard commands](https://unix.stackexchange.com/questions/37064/which-are-the-standard-commands-available-in-every-linux-based-distribution)
++ [readthedocs linuxmint](https://linuxmint-installation-guide.readthedocs.io/de/latest/verify.html)
