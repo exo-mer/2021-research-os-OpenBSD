@@ -31,113 +31,120 @@ $ passwd <USER>				# changing the passphrase of <USER>
 ```
 
 ### user
-
 ```
-$ useradd -m <NEWUSER>			# create a home directory and add a <NEWUSER>
-```
-
-```
-$ userdel -r <OLDUSER>			# remove account and corresponding home directory for an <OLDUSER>
+user $ whoami     # display the current user
 ```
 
 ```
-$ usermod -d /home/<NEW-DIR> <USER>	# changing the home directory of user <USER> to a new one <NEW-DIR>
+root $ useradd -m <NEWUSER>			# create a home directory and add a <NEWUSER>
 ```
 
 ```
-$ groupadd <NEW-GROUP>			# add the group <NEW-GROUP> to the system
+root $ userdel -r <OLDUSER>			# remove account and corresponding home directory for an <OLDUSER>
 ```
 
 ```
-$ groupdel <OLD-GROUP>			# remove the group <OLD-GROUP> from the system
+root $ usermod -d /home/<NEW-DIR> <USER>	# changing the home directory of user <USER> to a new one <NEW-DIR>
+```
+
+```
+root $ groupadd <NEW-GROUP>			# add the group <NEW-GROUP> to the system
+```
+
+```
+root $ groupdel <OLD-GROUP>			# remove the group <OLD-GROUP> from the system
 ```
 
 
 ```
-$ userinfo $USER			# print current user attributes to display (i.e. uid, dir, shell, etc.)
+root $ userinfo $USER			# print current user attributes to display (i.e. uid, dir, shell, etc.)
 ```
 
 ### permissions
 ```
-chmod -R 644 ./				# recursively changing the permissions of the current folder (to rw- r-- r--).
+user $ chmod -R 644 ./				# recursively changing the permissions of the current folder (to rw- r-- r--).
 ```
 
 ```
-$ chown <USER>:<GROUP> -R ./		# recursively changing the ownership of current directory to user and group of choice <USER>:<GROUP>
+root $ chown <USER>:<GROUP> -R ./		# recursively changing the ownership of current directory to user and group of choice <USER>:<GROUP>
 ```
 
 
 ### files and directories
 ```
-$ touch <FILE>				# creating and/or changing the access time a (new) file <FILE> (open to use [-t [[cc]yy]mmddHHMM[.SS]]).
+user $ pwd      # print the (current) working directory
+```
+
+```
+user $ touch <FILE>				# creating and/or changing the access time a (new) file <FILE> (open to use [-t [[cc]yy]mmddHHMM[.SS]]).
 ```
 
 
 ```
-$ ls -lisa ./				# long listing for each file current directory (includes displaying hidden files)
+user $ ls -lisa ./				# long listing for each file current directory (includes displaying hidden files)
 ```
 
 ```
-$ cd /home/$USER			# change directory to the home directory of the currently logged in user
+user $ cd /home/$USER			# change directory to the home directory of the currently logged in user
 ```
 
 ### processes
 
 ```
-$ pstree				# print tree for all the currently running processes
+user $ pstree				# print tree for all the currently running processes
 ```
 
 ```
-$ ps -p <PID>				# display all the information that is associated with the specified process id <PID>.
+user $ ps -p <PID>				# display all the information that is associated with the specified process id <PID>.
 ```
 
 ```
-$ kill -9 <PID>				# terminates the process with the process id <PID>
+user $ kill -9 <PID>				# terminates the process with the process id <PID>
 ```
 
 ### search and filter
 ```
-$ egrep -re '#include' ./		# list all files from current directory that match the regular expression / string '#include'
+user $ egrep -re '#include' ./		# list all files from current directory that match the regular expression / string '#include'
 ```
 
 ```
-$ find /home/$USER -name "*.c" -exec grep "include" {} \;	# print all includes for all files with the *.c extension in current user directory
+user $ find /home/$USER -name "*.c" -exec grep "include" {} \;	# print all includes for all files with the *.c extension in current user directory
 ```
 
 ### for loop one-liner
 ```
-for file in *.sh; do cat $file; done
+user $ for file in *.sh; do cat $file; done
 ```
 
 ### check, crypt, hash, sign
 ```
-$ cksum <SOME-FILE>    # print checksum for a give file <SOME-FILE>
+user $ cksum <SOME-FILE>    # print checksum for a give file <SOME-FILE>
 ```
 
 ```
-$ md5 <SOME-FILE>    # print the md5 hash for a given file <SOME-FILE>
+user $ md5 <SOME-FILE>    # print the md5 hash for a given file <SOME-FILE>
 ```
 
 ```
-$ sha256 -c <SOME-FILE-CONTAINING-SHA256SUMS>				# check for a valid signature for a present file in <SOME-FILE-CONTAINING-SHA256SUMS>
+user $ sha256 -c <SOME-FILE-CONTAINING-SHA256SUMS>				# check for a valid signature for a present file in <SOME-FILE-CONTAINING-SHA256SUMS>
 ```
 
 
 ### network
 ```
-$ ping 127.0.0.1    # ping the ipv4 address 127.0.0.1 (or ping localhost)
+user $ ping 127.0.0.1    # ping the ipv4 address 127.0.0.1 (or ping localhost)
 ```
 
 ```
-$ arp -a    # list all arp table records
+user $ arp -a    # list all arp table records
 ```
 
 ```
-$ ifconfig <INTERFACE>     # print the interface configurations and attributes for the interface <INTERFACE> (i.e. use iwn0)
+user $ ifconfig <INTERFACE>     # print the interface configurations and attributes for the interface <INTERFACE> (i.e. use iwn0)
 ```
 
 ```
-$ dhclient <INTERFACE>     # get a lease ip address from the dhcp server (for the interface <INTERFACE>; i.e. iwn0)
+user $ dhclient <INTERFACE>     # get a lease ip address from the dhcp server (for the interface <INTERFACE>; i.e. iwn0)
 ```
 
 ##### Sources
