@@ -109,14 +109,31 @@ $ find /home/$USER -name "*.c" -exec grep "include" {} \;	# print all includes f
 for file in *.sh; do cat $file; done
 ```
 
-### hash, sign, check crypt
+### check, crypt, hash, sign
 ```
-$ sha256 -c <SOME-SHA256SUMS>				# check for a valid signature for a present file in <SOME-SHA256SUMS>
+$ cksum <SOME-FILE>    # print checksum for a give file <SOME-FILE>
 ```
+
+```
+$ md5 <SOME-FILE>    # print the md5 hash for a given file <SOME-FILE>
+```
+
+```
+$ sha256 -c <SOME-FILE-CONTAINING-SHA256SUMS>				# check for a valid signature for a present file in <SOME-FILE-CONTAINING-SHA256SUMS>
+```
+
 
 ### network
 ```
 $ arp -a    # list all arp table records
+```
+
+```
+$ ifconfig <INTERFACE>     # print the interface configurations and attributes for the interface <INTERFACE> (i.e. use iwn0)
+```
+
+```
+$ dhclient <INTERFACE>     # get a lease ip address from the dhcp server (for the interface <INTERFACE>; i.e. iwn0)
 ```
 
 ##### Sources
