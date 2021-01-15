@@ -7,27 +7,27 @@
 
 ### session
 ```
-$ login <USER>				# login to the user account <USER>
+user $ login <USER>				# login to the user account <USER>
 ```
 
 ```
-$ exit					# leave the current shell (to enter the top one)
+user $ exit					# leave the current shell (to enter the top one)
 ```
 
 ```
-$ hostname				# print the current fully qualified hostname (i.e. local.home)
+user $ hostname				# print the current fully qualified hostname (i.e. local.home)
 ```
 
 ```
-$ su					# switching to super user
+user $ su					# switching to super user
 ```
 
 ```
-$ su <USER>				# switching to <USER>
+user $ su <USER>				# switching to <USER>
 ```
 
 ```
-$ passwd <USER>				# changing the passphrase of <USER>
+user $ passwd <USER>				# changing the passphrase of <USER>
 ```
 
 ### user
