@@ -114,6 +114,11 @@ for file in *.sh; do cat $file; done
 $ sha256 -c <SOME-SHA256SUMS>				# check for a valid signature for a present file in <SOME-SHA256SUMS>
 ```
 
+### network
+```
+$ arp -a    # list all arp table records
+```
+
 ##### Sources
 + [OpenBSD manual page server](https://man.openbsd.org/man)
 + [Unix Text Processing Command Reference](https://github.com/nschneid/unix-text-commands)
