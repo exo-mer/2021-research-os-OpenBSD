@@ -1,9 +1,9 @@
 # *X basic command set
 ## A command line cheat sheet
+[M.E. Rosner][mrosner], 2021-01-14T16:28:49Z
+[mrosner]: https://github.com/exo-mer/2030-research-os-some-basic-commands
 
-#### [M.E. Rosner][mrosner], 2021-01-14T16:28:49Z
-
-#### [mrosner]: https://github.com/exo-mer/2030-research-os-some-basic-commands
+#### If you like this document, consider to share it or give star. Thanks for reading!
 
 ### session
 ```
@@ -125,6 +125,10 @@ $ sha256 -c <SOME-FILE-CONTAINING-SHA256SUMS>				# check for a valid signature f
 
 ### network
 ```
+$ ping 127.0.0.1    # ping the ipv4 address 127.0.0.1 (or ping localhost)
+```
+
+```
 $ arp -a    # list all arp table records
 ```
 
@@ -143,9 +147,10 @@ $ dhclient <INTERFACE>     # get a lease ip address from the dhcp server (for th
 
 ##### More sources and additional reading
 + [archlinux man page](https://wiki.archlinux.org/index.php/man_page)
++ [FreeBSD Manual Pages](https://www.freebsd.org/cgi/man.cgi)
++ [gentoo man page](https://wiki.gentoo.org/wiki/Man_page)
 + [Miryung Kim UCLA](http://web.cs.ucla.edu/~miryung/teaching/EE461L-Spring2012/labs/posix.html)
 + [The Linux man-pages project](https://www.kernel.org/doc/man-pages/)
-+ [FreeBSD Manual Pages](https://www.freebsd.org/cgi/man.cgi)
 + [Ubuntu HowToSHA256SUM](https://help.ubuntu.com/community/HowToSHA256SUM)
 + [ubuntuusers Deutschland e.V.](https://wiki.ubuntuusers.de/man/)
 + [stackexchange standard commands](https://unix.stackexchange.com/questions/37064/which-are-the-standard-commands-available-in-every-linux-based-distribution)
