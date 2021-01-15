@@ -148,6 +148,7 @@ $ dhclient <INTERFACE>     # get a lease ip address from the dhcp server (for th
 ##### More sources and additional reading
 + [archlinux man page](https://wiki.archlinux.org/index.php/man_page)
 + [FreeBSD Manual Pages](https://www.freebsd.org/cgi/man.cgi)
++ [funtoo man pages](https://www.funtoo.org/Man_Pages)
 + [gentoo man page](https://wiki.gentoo.org/wiki/Man_page)
 + [Miryung Kim UCLA](http://web.cs.ucla.edu/~miryung/teaching/EE461L-Spring2012/labs/posix.html)
 + [The Linux man-pages project](https://www.kernel.org/doc/man-pages/)
