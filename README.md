@@ -109,15 +109,21 @@ $ find /home/$USER -name "*.c" -exec grep "include" {} \;	# print all includes f
 for file in *.sh; do cat $file; done
 ```
 
+### hash, sign, check crypt
+```
+sha256 -c <SOME-SHA256SUMS> # check for a valid signature for a present file in <SOME-SHA256SUMS>
+```
+
 ##### Sources
 + [OpenBSD manual page server](https://man.openbsd.org/man)
 + [Unix Text Processing Command Reference](https://github.com/nschneid/unix-text-commands)
 + [OpenBSD on wikibooks](https://de.wikibooks.org/wiki/OpenBSD/_Systemprogramme)
 
 ##### More sources and additional reading
-+ [Miryung Kim UCLA](http://web.cs.ucla.edu/~miryung/teaching/EE461L-Spring2012/labs/posix.html)
-+ [stackexchange standard commands](https://unix.stackexchange.com/questions/37064/which-are-the-standard-commands-available-in-every-linux-based-distribution)
 + [archlinux man page](https://wiki.archlinux.org/index.php/man_page)
-+ [ubuntuusers Deutschland e.V.](https://wiki.ubuntuusers.de/man/)
++ [Miryung Kim UCLA](http://web.cs.ucla.edu/~miryung/teaching/EE461L-Spring2012/labs/posix.html)
 + [The Linux man-pages project](https://www.kernel.org/doc/man-pages/)
 + [FreeBSD Manual Pages](https://www.freebsd.org/cgi/man.cgi)
++ [Ubuntu HowToSHA256SUM](https://help.ubuntu.com/community/HowToSHA256SUM)
++ [ubuntuusers Deutschland e.V.](https://wiki.ubuntuusers.de/man/)
++ [stackexchange standard commands](https://unix.stackexchange.com/questions/37064/which-are-the-standard-commands-available-in-every-linux-based-distribution)
