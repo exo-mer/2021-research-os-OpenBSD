@@ -3,9 +3,17 @@
 [M.E. Rosner][mrosner], 2021-01-14T16:28:49Z
 [mrosner]: https://github.com/exo-mer/2030-research-os-some-basic-commands
 
-#### If you like this document, consider to share it or give star. Thanks for reading!
+#### If you like this document, consider to share url above or give it a star. Thanks for reading and enjoy!
 
 ### session
+```
+user $ man man      # display the manual pages (for the usage of man pages)
+```
+
+```
+user $ echo 'welcome' $USER'!'      # print a welcome message to the current user
+```
+
 ```
 user $ login <USER>				# login to the user account <USER>
 ```
@@ -28,6 +36,14 @@ user $ su <USER>				# switching to <USER>
 
 ```
 user $ passwd <USER>				# changing the passphrase of <USER>
+```
+
+```
+user $ which <CMD>        # display full path of a command <CMD> to screen
+```
+
+```
+user $ sleep <SECONDS>      # suspend for a time frame (i.e. sleep 10 - supspend for 10 seconds)
 ```
 
 ### user
@@ -55,7 +71,6 @@ root $ groupadd <NEW-GROUP>			# add the group <NEW-GROUP> to the system
 root $ groupdel <OLD-GROUP>			# remove the group <OLD-GROUP> from the system
 ```
 
-
 ```
 root $ userinfo $USER			# print current user attributes to display (i.e. uid, dir, shell, etc.)
 ```
@@ -71,6 +86,26 @@ root $ chown <USER>:<GROUP> -R ./		# recursively changing the ownership of curre
 
 
 ### files and directories
+```
+user $ mv <PATH/TO/SOURCE> <PATH/TO/TARGET>     # move files or directories from source <PATH/TO/SOURCE> to target <PATH/TO/TARGET>
+```
+
+```
+user $ mkdir -p <SUPER-DIR>/<SUP-DIR>     # (if not present) create parent <SUPER-DIR> and child <SUB-DIR> directory (in one step)
+```
+
+```
+user $ cat <FILE-A> <FILE-B> > <CONCAT-FILE-C>      # concatenate the files <FILE-A> and <FILE-B> to a new combinated file <CONCAT-FILE-C>
+```
+
+```
+user $ tar cvzf <BASE-FILE-NAME>.tar.gz ./*     # create a gzip'd tar file using all files in current directory in verbose mode
+```
+
+```
+user $ tar xvzf <BASE-FILE-NAME>.tar.gz     # gunzip and extract package to current directory in verbose mode
+```
+
 ```
 user $ diff <FILE-A> <FILE-B>
 ```
@@ -116,6 +151,10 @@ user $ ps -p <PID>				# display all the information that is associated with the 
 user $ kill -9 <PID>				# terminates the process with the process id <PID>
 ```
 
+```
+user $ top -U $USER     # print and update all information about CPU processes for the current user
+```
+
 ### search and filter
 ```
 user $ egrep -re '#include' ./		# list all files from current directory that match the regular expression / string '#include'
@@ -130,7 +169,7 @@ user $ find /home/$USER -name "*.c" -exec grep "include" {} \;	# print all inclu
 user $ for file in *.sh; do cat $file; done
 ```
 
-### check, crypt, hash, sign
+### check, compress, crypt, hash, sign
 ```
 user $ cksum <SOME-FILE>    # print checksum for a give file <SOME-FILE>
 ```
@@ -143,6 +182,17 @@ user $ md5 <SOME-FILE>    # print the md5 hash for a given file <SOME-FILE>
 user $ sha256 -c <SOME-FILE-CONTAINING-SHA256SUMS>				# check for a valid signature for a present file in <SOME-FILE-CONTAINING-SHA256SUMS>
 ```
 
+```
+user $ du -sh ./       # provide disk usage of current directory in a human readable format (using Kilo, Mega, Giga.. byte units)
+```
+
+```
+user $ xz -z <FILE>     # compress a given file <FILE> (resulting in <FILE>.xz) 
+```
+
+```
+user $ xz -d <FILE>.xz      # decompress a given xz file <FILE>.xz (resulting in <FILE>)
+```
 
 ### network
 ```
@@ -168,6 +218,7 @@ user $ dhclient <INTERFACE>     # get a lease ip address from the dhcp server (f
 
 ##### More sources and additional reading
 + [archlinux man page](https://wiki.archlinux.org/index.php/man_page)
++ [David R. Mortensen CMU](http://www.cs.cmu.edu/~dmortens/xz.html)
 + [FreeBSD Manual Pages](https://www.freebsd.org/cgi/man.cgi)
 + [funtoo man pages](https://www.funtoo.org/Man_Pages)
 + [gentoo man page](https://wiki.gentoo.org/wiki/Man_page)
@@ -178,3 +229,6 @@ user $ dhclient <INTERFACE>     # get a lease ip address from the dhcp server (f
 + [ubuntuusers Deutschland e.V.](https://wiki.ubuntuusers.de/man/)
 + [stackexchange standard commands](https://unix.stackexchange.com/questions/37064/which-are-the-standard-commands-available-in-every-linux-based-distribution)
 + [readthedocs linuxmint](https://linuxmint-installation-guide.readthedocs.io/de/latest/verify.html)
+
+
+
