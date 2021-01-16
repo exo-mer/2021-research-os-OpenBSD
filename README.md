@@ -72,6 +72,10 @@ root $ chown <USER>:<GROUP> -R ./		# recursively changing the ownership of curre
 
 ### files and directories
 ```
+user $ diff <FILE-A> <FILE-B>
+```
+
+```
 user $ pwd      # print the (current) working directory
 ```
 
@@ -87,6 +91,16 @@ user $ ls -lisa ./				# long listing for each file current directory (includes d
 ```
 user $ cd /home/$USER			# change directory to the home directory of the currently logged in user
 ```
+
+```
+$ user $ df -h      # get an overview of free disk space (human readable)
+```
+
+```
+root $ dd if=/path/to/<IMAGE> of=/dev/<SDX> bs=1M     # write image file <IMAGE> to device file <SDX> (i.e. to create a bootable media)
+```
+
+
 
 ### processes
 
@@ -158,6 +172,7 @@ user $ dhclient <INTERFACE>     # get a lease ip address from the dhcp server (f
 + [funtoo man pages](https://www.funtoo.org/Man_Pages)
 + [gentoo man page](https://wiki.gentoo.org/wiki/Man_page)
 + [Miryung Kim UCLA](http://web.cs.ucla.edu/~miryung/teaching/EE461L-Spring2012/labs/posix.html)
++ [Phil Estes IBM diffs and patches](https://opensource.com/article/18/8/diffs-patches)
 + [The Linux man-pages project](https://www.kernel.org/doc/man-pages/)
 + [Ubuntu HowToSHA256SUM](https://help.ubuntu.com/community/HowToSHA256SUM)
 + [ubuntuusers Deutschland e.V.](https://wiki.ubuntuusers.de/man/)
