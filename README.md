@@ -27,6 +27,10 @@ user $ hostname				# print the current fully qualified hostname (i.e. local.home
 ```
 
 ```
+user $ uname -a     # display all specific information on the operating system (architecture, domainname, hostname, os name, os version)
+```
+
+```
 user $ su					# switching to super user
 ```
 
@@ -167,6 +171,11 @@ user $ find /home/$USER -name "*.c" -exec grep "include" {} \;	# print all inclu
 ### for loop one-liner
 ```
 user $ for file in *.sh; do cat $file; done
+```
+
+### date, time, timestamp
+```
+user $ date -z UTC +%C%y-%m-%dT%H:%M:%SZ      # display current universal time code (UTC) of date and time (and use this specific zulu date time format)
 ```
 
 ### check, compress, crypt, hash, sign
