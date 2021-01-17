@@ -92,163 +92,163 @@ user $ su <USER>				                                            # switching to <
 ```
 
 ```
-user $ passwd <USER>				                                       # changing the passphrase of <USER>
+user $ passwd <USER>				                                        # changing the passphrase of <USER>
 ```
 
 ### users and groups
 
 ```
-root $ useradd -m <NEWUSER>			                                   # create a home directory and add a <NEWUSER>
+root $ useradd -m <NEWUSER>			                                    # create a home directory and add a <NEWUSER>
 ```
 
 ```
-root $ userdel -r <OLDUSER>			                                   # remove account and corresponding home directory for an <OLDUSER>
+root $ userdel -r <OLDUSER>			                                    # remove account and corresponding home directory for an <OLDUSER>
 ```
 
 ```
-root $ usermod -d /home/<NEW-DIR> <USER>	                         # changing the home directory of user <USER> to a new one <NEW-DIR>
+root $ usermod -d /home/<NEW-DIR> <USER>	                          # changing the home directory of user <USER> to a new one <NEW-DIR>
 ```
 
 ```
-root $ groupadd <NEW-GROUP>			                                   # add the group <NEW-GROUP> to the system
+root $ groupadd <NEW-GROUP>			                                    # add the group <NEW-GROUP> to the system
 ```
 
 ```
-root $ groupdel <OLD-GROUP>			                                   # remove the group <OLD-GROUP> from the system
+root $ groupdel <OLD-GROUP>			                                    # remove the group <OLD-GROUP> from the system
 ```
 
 ```
-root $ userinfo $USER			                                         # print current user attributes to display (i.e. uid, dir, shell, etc.)
+root $ userinfo $USER			                                          # print current user attributes to display (i.e. uid, dir, shell, etc.)
 ```
 
 ### permissions
 ```
-user $ chmod -R 644 ./                                             # recursively changing the permissions of the current folder (to rw- r-- r--).
+user $ chmod -R 644 ./                                              # recursively changing the permissions of the current folder (to rw- r-- r--).
 ```
 
 ```
-root $ chown <USER>:<GROUP> -R ./                                  # recursively changing the ownership of current directory to user and group of choice <USER>:<GROUP>
+root $ chown <USER>:<GROUP> -R ./                                   # recursively changing the ownership of current directory to user and group of choice <USER>:<GROUP>
 ```
 
 ### files and directories
 ```
-user $ cp -R <PATH/TO/SOURCE> <PATH/TO/TARGET>                     # cp files or directories from source <PATH/TO/SOURCE> to target <PATH/TO/TARGET>
+user $ cp -R <PATH/TO/SOURCE> <PATH/TO/TARGET>                      # cp files or directories from source <PATH/TO/SOURCE> to target <PATH/TO/TARGET>
 ```
 
 ```
-user $ mv <PATH/TO/SOURCE> <PATH/TO/TARGET>                        # move files or directories from source <PATH/TO/SOURCE> to target <PATH/TO/TARGET>
+user $ mv <PATH/TO/SOURCE> <PATH/TO/TARGET>                         # move files or directories from source <PATH/TO/SOURCE> to target <PATH/TO/TARGET>
 ```
 
 ```
-user $ rm -Rf <PATH/TO/TARGET>                                     # remove files or directories </PATH/TO/TARGET> (use carefully, ones deleted etc.)
+user $ rm -Rf <PATH/TO/TARGET>                                      # remove files or directories </PATH/TO/TARGET> (use carefully, ones deleted etc.)
 ```
 
 ```
-user $ mkdir -p <SUPER-DIR>/<SUP-DIR>                              # (if not present) create parent <SUPER-DIR> and child <SUB-DIR> directory (in one step)
+user $ mkdir -p <SUPER-DIR>/<SUP-DIR>                               # (if not present) create parent <SUPER-DIR> and child <SUB-DIR> directory (in one step)
 ```
 
 ```
-user $ cat <FILE-A> <FILE-B> > <CONCAT-FILE-C>                     # concatenate the files <FILE-A> and <FILE-B> to a new combinated file <CONCAT-FILE-C>
+user $ cat <FILE-A> <FILE-B> > <CONCAT-FILE-C>                      # concatenate the files <FILE-A> and <FILE-B> to a new combinated file <CONCAT-FILE-C>
 ```
 
 ```
-user $ cmp <FILE-A> <FILE-B>                                       # compare two files and line by line and output the differences
+user $ cmp <FILE-A> <FILE-B>                                        # compare two files and line by line and output the differences
 ```
 
 ```
-user $ diff <FILE-A> <FILE-B>                                      # display differentials of two files <FILE-A> <FILE-B> line by line (used to retrieve a delta, used as patch)
+user $ diff <FILE-A> <FILE-B>                                       # display differentials of two files <FILE-A> <FILE-B> line by line (used to retrieve a delta, used as patch)
 ```
 
 ### disk space and backups
 
 ```
-user $ xz -z <FILE>                                                # compress a given file <FILE> (resulting in <FILE>.xz) 
+user $ xz -z <FILE>                                                 # compress a given file <FILE> (resulting in <FILE>.xz) 
 ```
 
 ```
-user $ xz -d <FILE>.xz                                             # decompress a given xz file <FILE>.xz (resulting in <FILE>)
+user $ xz -d <FILE>.xz                                              # decompress a given xz file <FILE>.xz (resulting in <FILE>)
 ```
 
 ```
-user $ tar cvzf <BASE-FILE-NAME>.tar.gz ./*                        # create a gzip'd tar file using all files in current directory in verbose mode
+user $ tar cvzf <BASE-FILE-NAME>.tar.gz ./*                         # create a gzip'd tar file using all files in current directory in verbose mode
 ```
 
 ```
-user $ tar xvzf <BASE-FILE-NAME>.tar.gz                            # gunzip and extract package to current directory in verbose mode
+user $ tar xvzf <BASE-FILE-NAME>.tar.gz                             # gunzip and extract package to current directory in verbose mode
 ```
 
 ```
-user $ du -sh ./                                                   # provide disk usage of current directory in a human readable format (using Kilo, Mega, Giga.. byte units)
+user $ du -sh ./                                                    # provide disk usage of current directory in a human readable format (using Kilo, Mega, Giga.. byte units)
 ```
 
 ```
-user $ df -h                                                     # get an overview of free disk space (human readable)
+user $ df -h                                                        # get an overview of free disk space (human readable)
 ```
 
 ```
-root $ dd if=/path/to/<IMAGE> of=/dev/<SDX> bs=1M                  # write image file <IMAGE> to device file <SDX> (i.e. to create a bootable media)
+root $ dd if=/path/to/<IMAGE> of=/dev/<SDX> bs=1M                   # write image file <IMAGE> to device file <SDX> (i.e. to create a bootable media)
 ```
 
 ### processes
 
 ```
-user $ pstree                                                      # print tree for all the currently running processes
+user $ pstree                                                       # print tree for all the currently running processes
 ```
 
 ```
-user $ ps -p <PID>                                          			# display all the information that is associated with the specified process id <PID>.
+user $ ps -p <PID>                                          			  # display all the information that is associated with the specified process id <PID>.
 ```
 
 ```
-user $ kill -9 <PID>	                                            # terminates the process with the process id <PID>
+user $ kill -9 <PID>	                                              # terminates the process with the process id <PID>
 ```
 
 ```
-user $ top -U $USER                                               # print and update all information about CPU processes for the current user
+user $ top -U $USER                                                 # print and update all information about CPU processes for the current user
 ```
 
 ### search and filter
 ```
-user $ egrep -re '#include' ./		                                # list all files from current directory that match the regular expression / string '#include'
+user $ egrep -re '#include' ./		                                  # list all files from current directory that match the regular expression / string '#include'
 ```
 
 ```
-user $ find /home/$USER -name "*.c" -exec grep "include" {} \;    # print all includes for all files with the *.c extension in current user directory
+user $ find /home/$USER -name "*.c" -exec grep "include" {} \;      # print all includes for all files with the *.c extension in current user directory
 ```
 
 ### for loop one-liner
 ```
-user $ for file in *.sh; do cat $file; done                       # for each file having the extension '.sh' print to screen
+user $ for file in *.sh; do cat $file; done                         # for each file having the extension '.sh' print to screen
 ```
 
 ### check, crypt and hashes
 ```
-user $ cksum <SOME-FILE>                                          # print checksum for a give file <SOME-FILE>
+user $ cksum <SOME-FILE>                                            # print checksum for a give file <SOME-FILE>
 ```
 
 ```
-user $ md5 <SOME-FILE>                                            # print the md5 hash for a given file <SOME-FILE>
+user $ md5 <SOME-FILE>                                              # print the md5 hash for a given file <SOME-FILE>
 ```
 
 ```
-user $ sha256 -c <SOME-FILE-CONTAINING-SHA256SUMS>                # check for a valid signature for a present file in <SOME-FILE-CONTAINING-SHA256SUMS>
+user $ sha256 -c <SOME-FILE-CONTAINING-SHA256SUMS>                  # check for a valid signature for a present file in <SOME-FILE-CONTAINING-SHA256SUMS>
 ```
 
 ### network
 ```
-user $ ping 127.0.0.1                                             # ping the ipv4 address 127.0.0.1 (or ping localhost)
+user $ ping 127.0.0.1                                               # ping the ipv4 address 127.0.0.1 (or ping localhost)
 ```
 
 ```
-user $ arp -a                                                     # list all arp table records
+user $ arp -a                                                       # list all arp table records
 ```
 
 ```
-user $ ifconfig <INTERFACE>                                       # print the interface configurations and attributes for the interface <INTERFACE> (i.e. use iwn0)
+user $ ifconfig <INTERFACE>                                         # print the interface configurations and attributes for the interface <INTERFACE> (i.e. use iwn0)
 ```
 
 ```
-user $ dhclient <INTERFACE>                                       # get a lease ip address from the dhcp server (for the interface <INTERFACE>; i.e. iwn0)
+user $ dhclient <INTERFACE>                                         # get a lease ip address from the dhcp server (for the interface <INTERFACE>; i.e. iwn0)
 ```
 
 ##### Sources
