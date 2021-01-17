@@ -7,32 +7,30 @@
 
 #### If you like this document, consider to share url above or give it a star. Thanks for reading and enjoy!
 
-## documentation and navigation
 ### sessions and first steps
 ```
-user $ login <USER>				# login to the user account <USER>
+user $ login <USER>				                                         # login to the user account <USER>
 ```
 
 ```
-user $ which <CMD>        # display full path of a command <CMD> to screen
+user $ which <CMD>                                                 # display full path of a command <CMD> to screen
 ```
 
 ```
-user $ whoami     # display the current user
+user $ whoami                                                      # display the current user
 ```
 
 ```
-user $ clear      # clear the screen
+user $ clear                                                       # clear the screen
 ```
 
 ```
-root $ shutdown -h now      # shutdown and halt the system
+root $ shutdown -h now                                             # shutdown and halt the system
 ```
 
 ```
-user $ exit					# leave the current shell (to enter the top one)
+user $ exit                                                        # leave the current shell (to enter the top one)
 ```
-
 
 ### reading and navigating
 ```
@@ -72,7 +70,6 @@ user $ date -z UTC +%C%y-%m-%dT%H:%M:%SZ                            # display cu
 user $ sleep <SECONDS>                                              # suspend for a time frame (i.e. sleep 10 - supspend for 10 seconds)
 ```
 
-## authentication, authorization
 ### about the system, users and changing user roles
 ```
 user $ echo 'welcome' $USER'!'                                      # print a welcome message to the current user
@@ -97,7 +94,6 @@ user $ su <USER>				                                            # switching to <
 ```
 user $ passwd <USER>				                                       # changing the passphrase of <USER>
 ```
-
 
 ### users and groups
 
@@ -134,7 +130,6 @@ user $ chmod -R 644 ./                                             # recursively
 root $ chown <USER>:<GROUP> -R ./                                  # recursively changing the ownership of current directory to user and group of choice <USER>:<GROUP>
 ```
 
-
 ### files and directories
 ```
 user $ cp -R <PATH/TO/SOURCE> <PATH/TO/TARGET>                     # cp files or directories from source <PATH/TO/SOURCE> to target <PATH/TO/TARGET>
@@ -164,99 +159,96 @@ user $ cmp <FILE-A> <FILE-B>                                       # compare two
 user $ diff <FILE-A> <FILE-B>                                      # display differentials of two files <FILE-A> <FILE-B> line by line (used to retrieve a delta, used as patch)
 ```
 
-### space and backups
+### disk space and backups
 
 ```
-user $ xz -z <FILE>     # compress a given file <FILE> (resulting in <FILE>.xz) 
-```
-
-```
-user $ xz -d <FILE>.xz      # decompress a given xz file <FILE>.xz (resulting in <FILE>)
+user $ xz -z <FILE>                                                # compress a given file <FILE> (resulting in <FILE>.xz) 
 ```
 
 ```
-user $ tar cvzf <BASE-FILE-NAME>.tar.gz ./*     # create a gzip'd tar file using all files in current directory in verbose mode
+user $ xz -d <FILE>.xz                                             # decompress a given xz file <FILE>.xz (resulting in <FILE>)
 ```
 
 ```
-user $ tar xvzf <BASE-FILE-NAME>.tar.gz     # gunzip and extract package to current directory in verbose mode
+user $ tar cvzf <BASE-FILE-NAME>.tar.gz ./*                        # create a gzip'd tar file using all files in current directory in verbose mode
 ```
 
 ```
-user $ du -sh ./       # provide disk usage of current directory in a human readable format (using Kilo, Mega, Giga.. byte units)
+user $ tar xvzf <BASE-FILE-NAME>.tar.gz                            # gunzip and extract package to current directory in verbose mode
 ```
 
 ```
-$ user $ df -h      # get an overview of free disk space (human readable)
+user $ du -sh ./                                                   # provide disk usage of current directory in a human readable format (using Kilo, Mega, Giga.. byte units)
 ```
 
 ```
-root $ dd if=/path/to/<IMAGE> of=/dev/<SDX> bs=1M     # write image file <IMAGE> to device file <SDX> (i.e. to create a bootable media)
+$ user $ df -h                                                     # get an overview of free disk space (human readable)
 ```
 
-
+```
+root $ dd if=/path/to/<IMAGE> of=/dev/<SDX> bs=1M                  # write image file <IMAGE> to device file <SDX> (i.e. to create a bootable media)
+```
 
 ### processes
 
 ```
-user $ pstree				# print tree for all the currently running processes
+user $ pstree                                                      # print tree for all the currently running processes
 ```
 
 ```
-user $ ps -p <PID>				# display all the information that is associated with the specified process id <PID>.
+user $ ps -p <PID>                                          			# display all the information that is associated with the specified process id <PID>.
 ```
 
 ```
-user $ kill -9 <PID>				# terminates the process with the process id <PID>
+user $ kill -9 <PID>	                                            # terminates the process with the process id <PID>
 ```
 
 ```
-user $ top -U $USER     # print and update all information about CPU processes for the current user
+user $ top -U $USER                                               # print and update all information about CPU processes for the current user
 ```
 
 ### search and filter
 ```
-user $ egrep -re '#include' ./		# list all files from current directory that match the regular expression / string '#include'
+user $ egrep -re '#include' ./		                                # list all files from current directory that match the regular expression / string '#include'
 ```
 
 ```
-user $ find /home/$USER -name "*.c" -exec grep "include" {} \;	# print all includes for all files with the *.c extension in current user directory
+user $ find /home/$USER -name "*.c" -exec grep "include" {} \;    # print all includes for all files with the *.c extension in current user directory
 ```
 
 ### for loop one-liner
 ```
-user $ for file in *.sh; do cat $file; done
+user $ for file in *.sh; do cat $file; done                       # for each file having the extension '.sh' print to screen
 ```
-
 
 ### check, crypt and hashes
 ```
-user $ cksum <SOME-FILE>    # print checksum for a give file <SOME-FILE>
+user $ cksum <SOME-FILE>                                          # print checksum for a give file <SOME-FILE>
 ```
 
 ```
-user $ md5 <SOME-FILE>    # print the md5 hash for a given file <SOME-FILE>
+user $ md5 <SOME-FILE>                                            # print the md5 hash for a given file <SOME-FILE>
 ```
 
 ```
-user $ sha256 -c <SOME-FILE-CONTAINING-SHA256SUMS>				# check for a valid signature for a present file in <SOME-FILE-CONTAINING-SHA256SUMS>
+user $ sha256 -c <SOME-FILE-CONTAINING-SHA256SUMS>                # check for a valid signature for a present file in <SOME-FILE-CONTAINING-SHA256SUMS>
 ```
 
 ### network
 ```
-user $ ping 127.0.0.1    # ping the ipv4 address 127.0.0.1 (or ping localhost)
+user $ ping 127.0.0.1                                             # ping the ipv4 address 127.0.0.1 (or ping localhost)
 ```
 
 ```
-user $ arp -a    # list all arp table records
+user $ arp -a                                                     # list all arp table records
 ```
 
 ```
-user $ ifconfig <INTERFACE>     # print the interface configurations and attributes for the interface <INTERFACE> (i.e. use iwn0)
+user $ ifconfig <INTERFACE>                                       # print the interface configurations and attributes for the interface <INTERFACE> (i.e. use iwn0)
 ```
 
 ```
-user $ dhclient <INTERFACE>     # get a lease ip address from the dhcp server (for the interface <INTERFACE>; i.e. iwn0)
+user $ dhclient <INTERFACE>                                       # get a lease ip address from the dhcp server (for the interface <INTERFACE>; i.e. iwn0)
 ```
 
 ##### Sources
