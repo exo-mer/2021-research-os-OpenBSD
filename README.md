@@ -1,45 +1,16 @@
 # *X basic command set
-## A command line cheat sheet
-[M.E. Rosner][mrosner], 2021-01-14T16:28:49Z
-[mrosner]: https://github.com/exo-mer/2030-research-os-some-basic-commands
+----------------------------
+# A command line cheat sheet
+###### [mrosner][exo-mer], 2021-01-14T16:28:49Z
+
+[exo-mer commands](https://github.com/exo-mer/2030-research-os-some-basic-commands)
 
 #### If you like this document, consider to share url above or give it a star. Thanks for reading and enjoy!
 
-### session
-```
-user $ man man      # display the manual pages (for the usage of man pages)
-```
-
-```
-user $ echo 'welcome' $USER'!'      # print a welcome message to the current user
-```
-
+## documentation and navigation
+### sessions and first steps
 ```
 user $ login <USER>				# login to the user account <USER>
-```
-
-```
-user $ exit					# leave the current shell (to enter the top one)
-```
-
-```
-user $ hostname				# print the current fully qualified hostname (i.e. local.home)
-```
-
-```
-user $ uname -a     # display all specific information on the operating system (architecture, domainname, hostname, os name, os version)
-```
-
-```
-user $ su					# switching to super user
-```
-
-```
-user $ su <USER>				# switching to <USER>
-```
-
-```
-user $ passwd <USER>				# changing the passphrase of <USER>
 ```
 
 ```
@@ -47,59 +18,160 @@ user $ which <CMD>        # display full path of a command <CMD> to screen
 ```
 
 ```
-user $ sleep <SECONDS>      # suspend for a time frame (i.e. sleep 10 - supspend for 10 seconds)
-```
-
-### user
-```
 user $ whoami     # display the current user
 ```
 
 ```
-root $ useradd -m <NEWUSER>			# create a home directory and add a <NEWUSER>
+user $ clear      # clear the screen
 ```
 
 ```
-root $ userdel -r <OLDUSER>			# remove account and corresponding home directory for an <OLDUSER>
+root $ shutdown -h now      # shutdown and halt the system
 ```
 
 ```
-root $ usermod -d /home/<NEW-DIR> <USER>	# changing the home directory of user <USER> to a new one <NEW-DIR>
+user $ exit					# leave the current shell (to enter the top one)
+```
+
+
+### reading and navigating
+```
+user $ man 1 man                                                   # display the manual pages (for the usage of man pages)
 ```
 
 ```
-root $ groupadd <NEW-GROUP>			# add the group <NEW-GROUP> to the system
+user $ pwd                                                         # print the (current) working directory
 ```
 
 ```
-root $ groupdel <OLD-GROUP>			# remove the group <OLD-GROUP> from the system
+user $ cd /home/$USER                                              # change directory to the home directory of the currently logged in user
 ```
 
 ```
-root $ userinfo $USER			# print current user attributes to display (i.e. uid, dir, shell, etc.)
+user $ ls -lisa /etc/fstab                                         # long listing for each file current directory (includes displaying hidden files)
+```
+
+```
+user $ more /usr/share/man/man1/whoami.1                           # to view the first section of the whoami command on screen (use 'q' for quit and cursor for scrolling the document)
+```
+
+```
+user $ less /usr/share/man/man1/whoami.1                           # to view the first section of the whoami command on screen (use 'q' for quit and cursor for scrolling the document; less is more)
+```
+
+### date, time and timestamp
+```
+user $ touch -d 1968-11-03T18:18:01.032407414Z <FILE>               # creating and/or changing the access time a (new) file <FILE> (open to use [-t [[cc]yy]mmddHHMM[.SS]]).
+```
+
+```
+user $ date -z UTC +%C%y-%m-%dT%H:%M:%SZ                            # display current universal time code (UTC) of date and time (and use this specific zulu date time format)
+```
+
+```
+user $ sleep <SECONDS>                                              # suspend for a time frame (i.e. sleep 10 - supspend for 10 seconds)
+```
+
+## authentication, authorization
+### about the system, users and changing user roles
+```
+user $ echo 'welcome' $USER'!'                                      # print a welcome message to the current user
+```
+
+```
+user $ hostname                                               			# print the current fully qualified hostname (i.e. local.home)
+```
+
+```
+user $ uname -a                                                     # display all specific information on the operating system (architecture, domainname, hostname, os name, os version)
+```
+
+```
+user $ su					                                                  # switching to super user
+```
+
+```
+user $ su <USER>				                                            # switching to <USER>
+```
+
+```
+user $ passwd <USER>				                                       # changing the passphrase of <USER>
+```
+
+
+### users and groups
+
+```
+root $ useradd -m <NEWUSER>			                                   # create a home directory and add a <NEWUSER>
+```
+
+```
+root $ userdel -r <OLDUSER>			                                   # remove account and corresponding home directory for an <OLDUSER>
+```
+
+```
+root $ usermod -d /home/<NEW-DIR> <USER>	                         # changing the home directory of user <USER> to a new one <NEW-DIR>
+```
+
+```
+root $ groupadd <NEW-GROUP>			                                   # add the group <NEW-GROUP> to the system
+```
+
+```
+root $ groupdel <OLD-GROUP>			                                   # remove the group <OLD-GROUP> from the system
+```
+
+```
+root $ userinfo $USER			                                         # print current user attributes to display (i.e. uid, dir, shell, etc.)
 ```
 
 ### permissions
 ```
-user $ chmod -R 644 ./				# recursively changing the permissions of the current folder (to rw- r-- r--).
+user $ chmod -R 644 ./                                             # recursively changing the permissions of the current folder (to rw- r-- r--).
 ```
 
 ```
-root $ chown <USER>:<GROUP> -R ./		# recursively changing the ownership of current directory to user and group of choice <USER>:<GROUP>
+root $ chown <USER>:<GROUP> -R ./                                  # recursively changing the ownership of current directory to user and group of choice <USER>:<GROUP>
 ```
 
 
 ### files and directories
 ```
-user $ mv <PATH/TO/SOURCE> <PATH/TO/TARGET>     # move files or directories from source <PATH/TO/SOURCE> to target <PATH/TO/TARGET>
+user $ cp -R <PATH/TO/SOURCE> <PATH/TO/TARGET>                     # cp files or directories from source <PATH/TO/SOURCE> to target <PATH/TO/TARGET>
 ```
 
 ```
-user $ mkdir -p <SUPER-DIR>/<SUP-DIR>     # (if not present) create parent <SUPER-DIR> and child <SUB-DIR> directory (in one step)
+user $ mv <PATH/TO/SOURCE> <PATH/TO/TARGET>                        # move files or directories from source <PATH/TO/SOURCE> to target <PATH/TO/TARGET>
 ```
 
 ```
-user $ cat <FILE-A> <FILE-B> > <CONCAT-FILE-C>      # concatenate the files <FILE-A> and <FILE-B> to a new combinated file <CONCAT-FILE-C>
+user $ rm -Rf <PATH/TO/TARGET>                                     # remove files or directories </PATH/TO/TARGET> (use carefully, ones deleted etc.)
+```
+
+```
+user $ mkdir -p <SUPER-DIR>/<SUP-DIR>                              # (if not present) create parent <SUPER-DIR> and child <SUB-DIR> directory (in one step)
+```
+
+```
+user $ cat <FILE-A> <FILE-B> > <CONCAT-FILE-C>                     # concatenate the files <FILE-A> and <FILE-B> to a new combinated file <CONCAT-FILE-C>
+```
+
+```
+user $ cmp <FILE-A> <FILE-B>                                       # compare two files and line by line and output the differences
+```
+
+```
+user $ diff <FILE-A> <FILE-B>                                      # display differentials of two files <FILE-A> <FILE-B> line by line (used to retrieve a delta, used as patch)
+```
+
+### space and backups
+
+```
+user $ xz -z <FILE>     # compress a given file <FILE> (resulting in <FILE>.xz) 
+```
+
+```
+user $ xz -d <FILE>.xz      # decompress a given xz file <FILE>.xz (resulting in <FILE>)
 ```
 
 ```
@@ -111,24 +183,7 @@ user $ tar xvzf <BASE-FILE-NAME>.tar.gz     # gunzip and extract package to curr
 ```
 
 ```
-user $ diff <FILE-A> <FILE-B>
-```
-
-```
-user $ pwd      # print the (current) working directory
-```
-
-```
-user $ touch <FILE>				# creating and/or changing the access time a (new) file <FILE> (open to use [-t [[cc]yy]mmddHHMM[.SS]]).
-```
-
-
-```
-user $ ls -lisa ./				# long listing for each file current directory (includes displaying hidden files)
-```
-
-```
-user $ cd /home/$USER			# change directory to the home directory of the currently logged in user
+user $ du -sh ./       # provide disk usage of current directory in a human readable format (using Kilo, Mega, Giga.. byte units)
 ```
 
 ```
@@ -173,12 +228,8 @@ user $ find /home/$USER -name "*.c" -exec grep "include" {} \;	# print all inclu
 user $ for file in *.sh; do cat $file; done
 ```
 
-### date, time, timestamp
-```
-user $ date -z UTC +%C%y-%m-%dT%H:%M:%SZ      # display current universal time code (UTC) of date and time (and use this specific zulu date time format)
-```
 
-### check, compress, crypt, hash, sign
+### check, crypt and hashes
 ```
 user $ cksum <SOME-FILE>    # print checksum for a give file <SOME-FILE>
 ```
@@ -189,18 +240,6 @@ user $ md5 <SOME-FILE>    # print the md5 hash for a given file <SOME-FILE>
 
 ```
 user $ sha256 -c <SOME-FILE-CONTAINING-SHA256SUMS>				# check for a valid signature for a present file in <SOME-FILE-CONTAINING-SHA256SUMS>
-```
-
-```
-user $ du -sh ./       # provide disk usage of current directory in a human readable format (using Kilo, Mega, Giga.. byte units)
-```
-
-```
-user $ xz -z <FILE>     # compress a given file <FILE> (resulting in <FILE>.xz) 
-```
-
-```
-user $ xz -d <FILE>.xz      # decompress a given xz file <FILE>.xz (resulting in <FILE>)
 ```
 
 ### network
@@ -238,6 +277,3 @@ user $ dhclient <INTERFACE>     # get a lease ip address from the dhcp server (f
 + [ubuntuusers Deutschland e.V.](https://wiki.ubuntuusers.de/man/)
 + [stackexchange standard commands](https://unix.stackexchange.com/questions/37064/which-are-the-standard-commands-available-in-every-linux-based-distribution)
 + [readthedocs linuxmint](https://linuxmint-installation-guide.readthedocs.io/de/latest/verify.html)
-
-
-
