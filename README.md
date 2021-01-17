@@ -182,7 +182,7 @@ user $ du -sh ./                                                   # provide dis
 ```
 
 ```
-$ user $ df -h                                                     # get an overview of free disk space (human readable)
+user $ df -h                                                     # get an overview of free disk space (human readable)
 ```
 
 ```
