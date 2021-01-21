@@ -216,6 +216,11 @@ user $ egrep -re '#include' ./		                                  # list all fil
 user $ find /home/$USER -name "*.c" -exec grep "include" {} \;      # print all includes for all files with the *.c extension in current user directory
 ```
 
+### replace characters
+```
+user $ tr '\t' ';' < <INPUT-FILE> > <OUTPUT-FILE>                   # replace all tab '\t' with semicolon ';' and file out to <OUTPUT-FILE>
+```
+
 ### for loop one-liner
 ```
 user $ for file in *.sh; do cat $file; done                         # for each file having the extension '.sh' print to screen
@@ -264,8 +269,9 @@ user $ dhclient <INTERFACE>                                         # get a leas
 + [gentoo man page](https://wiki.gentoo.org/wiki/Man_page)
 + [Miryung Kim UCLA](http://web.cs.ucla.edu/~miryung/teaching/EE461L-Spring2012/labs/posix.html)
 + [Phil Estes IBM diffs and patches](https://opensource.com/article/18/8/diffs-patches)
++ [readthedocs linuxmint](https://linuxmint-installation-guide.readthedocs.io/de/latest/verify.html)
++ [stackexchange standard commands](https://unix.stackexchange.com/questions/37064/which-are-the-standard-commands-available-in-every-linux-based-distribution)
 + [The Linux man-pages project](https://www.kernel.org/doc/man-pages/)
 + [Ubuntu HowToSHA256SUM](https://help.ubuntu.com/community/HowToSHA256SUM)
 + [ubuntuusers Deutschland e.V.](https://wiki.ubuntuusers.de/man/)
-+ [stackexchange standard commands](https://unix.stackexchange.com/questions/37064/which-are-the-standard-commands-available-in-every-linux-based-distribution)
-+ [readthedocs linuxmint](https://linuxmint-installation-guide.readthedocs.io/de/latest/verify.html)
++ [unix for dummies questions and answers](https://www.unix.com/unix-for-dummies-questions-and-answers/42783-replacing-comma-tab.html)
