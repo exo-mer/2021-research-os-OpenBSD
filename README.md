@@ -1,9 +1,9 @@
-# *X basic command set
+# *N*X basic command set
 ----------------------------
 # A command line cheat sheet
 ###### [mrosner][exo-mer], 2021-01-14T16:28:49Z
 
-[exo-mer commands](https://github.com/exo-mer/2030-research-os-some-basic-commands)
+[exo-mer commands](https://github.com/exo-mer/2021-research-os-some-basic-commands)
 
 #### If you like this document, consider to share url above or give it a star. Thanks for reading and enjoy!
 
@@ -216,9 +216,21 @@ user $ egrep -re '#include' ./		                                  # list all fil
 user $ find /home/$USER -name "*.c" -exec grep "include" {} \;      # print all includes for all files with the *.c extension in current user directory
 ```
 
-### replace characters
+### miscellaneous: aliases, replace characters, sort, cut, md5, export
+```
+user $ alias giga="du -sh * | grep [0-9]'G' | sort"                 # giga as an alias for getting a sorted disk space list disk space on files and directories
+```
+
 ```
 user $ tr '\t' ';' < <INPUT-FILE> > <OUTPUT-FILE>                   # replace all tab '\t' with semicolon ';' and file out to <OUTPUT-FILE>
+```
+
+```
+user $ export PATH=$PATH:~/.local/bin                               # add ~/.local/bin to PATH variable
+```
+
+```
+user $ md5 <SOME-FILE> | cut -d' ' -f4                              # print the extracted md5 hash value using cut with space (-d' ') delimiter
 ```
 
 ### for loop one-liner
@@ -237,6 +249,14 @@ user $ md5 <SOME-FILE>                                              # print the 
 
 ```
 user $ sha256 -c <SOME-FILE-CONTAINING-SHA256SUMS>                  # check for a valid signature for a present file in <SOME-FILE-CONTAINING-SHA256SUMS>
+```
+
+```
+root $ bioctl -c C -l /dev/sd3i softraid0                           # create a file softraid0 for a given crypted container sd3i using bioctl (RAID management interface)
+```
+
+```
+user $ openssl rand -base64 32                                      # use openssl to generate a random string that is base64-encoded (suitable as base for a passphrase)
 ```
 
 ### network
@@ -271,6 +291,7 @@ user $ dhclient <INTERFACE>                                         # get a leas
 + [Phil Estes IBM diffs and patches](https://opensource.com/article/18/8/diffs-patches)
 + [readthedocs linuxmint](https://linuxmint-installation-guide.readthedocs.io/de/latest/verify.html)
 + [stackexchange standard commands](https://unix.stackexchange.com/questions/37064/which-are-the-standard-commands-available-in-every-linux-based-distribution)
++ [stackexchange generate a random string](https://unix.stackexchange.com/questions/230673/how-to-generate-a-random-string)
 + [The Linux man-pages project](https://www.kernel.org/doc/man-pages/)
 + [Ubuntu HowToSHA256SUM](https://help.ubuntu.com/community/HowToSHA256SUM)
 + [ubuntuusers Deutschland e.V.](https://wiki.ubuntuusers.de/man/)
