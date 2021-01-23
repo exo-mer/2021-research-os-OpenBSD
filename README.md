@@ -1,4 +1,4 @@
-# *N*X basic command set
+# *X basic command set
 ----------------------------
 # A command line cheat sheet
 ###### [mrosner][exo-mer], 2021-01-14T16:28:49Z
