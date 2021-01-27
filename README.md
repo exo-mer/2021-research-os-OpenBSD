@@ -233,6 +233,18 @@ user $ export PATH=$PATH:~/.local/bin                               # add ~/.loc
 user $ md5 <SOME-FILE> | cut -d' ' -f4                              # print the extracted md5 hash value using cut with space (-d' ') delimiter
 ```
 
+### git
+```
+user $ git remote remove origin                                     # solve issues "remote: Invalid username or password. fatal: Authentication failed for 'https://github.com'" remove the origin first
+
+```
+
+```
+user $ git remote add origin git@github.com:<USER>/<REPOSITORY>.git     # add a remote origin to push via ssh (works for me)
+
+```
+
+
 ### for loop one-liner
 ```
 user $ for file in *.sh; do cat $file; done                         # for each file having the extension '.sh' print to screen
@@ -291,6 +303,7 @@ user $ dhclient <INTERFACE>                                         # get a leas
 + [Phil Estes IBM diffs and patches](https://opensource.com/article/18/8/diffs-patches)
 + [readthedocs linuxmint](https://linuxmint-installation-guide.readthedocs.io/de/latest/verify.html)
 + [stackexchange standard commands](https://unix.stackexchange.com/questions/37064/which-are-the-standard-commands-available-in-every-linux-based-distribution)
++ [ssh + github Reconfigure existing repositories to use SSH](https://kamarada.github.io/en/2019/07/14/using-git-with-ssh-keys/#.YBFoCEWYUUE)
 + [stackexchange generate a random string](https://unix.stackexchange.com/questions/230673/how-to-generate-a-random-string)
 + [The Linux man-pages project](https://www.kernel.org/doc/man-pages/)
 + [Ubuntu HowToSHA256SUM](https://help.ubuntu.com/community/HowToSHA256SUM)
