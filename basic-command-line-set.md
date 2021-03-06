@@ -3,7 +3,7 @@
 # A command line cheat sheet
 ###### [rosner][exo-mer], 2021-03-06T13:39:18Z
 
-[exo-mer commands](https://github.com/exo-mer/2021-research-os-OpenBSD)
+[exo-mer commands](https://github.com/exo-mer/2021-research-os-OpenBSD/blob/main/basic-command-line-set.md)
 
 ### sessions and first steps
 ```
