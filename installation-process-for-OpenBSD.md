@@ -115,7 +115,7 @@ In a good environment, performing these steps will lead to a wireless connection
 Having a GUI is nice! - by adding these packages, the Gnome environment will be installed.
 ```
 root $ pkg_add gnome gnome-extra gdm chromium nano
-root $ rcctl xenodm
+root $ rcctl disable xenodm
 root $ rcctl enable multicast messagebus avahi_daemon gdm
 root $ usermod -G staff USER
 root $ rcctl start messagebus
