@@ -1,11 +1,9 @@
-# *X basic command set
+# *NIX basic command set
 ----------------------------
 # A command line cheat sheet
-###### [mrosner][exo-mer], 2021-01-14T16:28:49Z
+###### [rosner][exo-mer], 2021-03-06T13:29:45Z
 
-[exo-mer commands](https://github.com/exo-mer/2021-research-os-some-basic-commands)
-
-#### If you like this document, consider to share url above or give it a star. Thanks for reading and enjoy!
+[exo-mer commands](https://github.com/exo-mer/2021-research-os-OpenBSD)
 
 ### sessions and first steps
 ```
@@ -287,6 +285,8 @@ user $ ifconfig <INTERFACE>                                         # print the 
 ```
 user $ dhclient <INTERFACE>                                         # get a lease ip address from the dhcp server (for the interface <INTERFACE>; i.e. iwn0)
 ```
+
+##### If you like this document, consider to share the url above or give it a star. Thanks for reading and enjoy!
 
 ##### Sources
 + [OpenBSD manual page server](https://man.openbsd.org/man)
