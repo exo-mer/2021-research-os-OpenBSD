@@ -295,7 +295,7 @@ user $ dhclient <INTERFACE>                                         # get a leas
 
 ##### More sources and additional reading
 + [archlinux man page](https://wiki.archlinux.org/index.php/man_page)
-+ [debian manpages](https://manpages.debian.org/)
++ [debian manpages](https://manpages.debian.org)
 + [David R. Mortensen CMU](http://www.cs.cmu.edu/~dmortens/xz.html)
 + [FreeBSD Manual Pages](https://www.freebsd.org/cgi/man.cgi)
 + [funtoo man pages](https://www.funtoo.org/Man_Pages)
