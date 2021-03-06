@@ -1,9 +1,9 @@
 # OpenBSD 6.8 - Installation Notes
 ----------------------------
-# A drafted installation process for OpenBSD (including WiFi, Gnome, ports)
+# A drafted installation process for OpenBSD (including WiFi, Gnome, ports and more)
 ###### [rosner][exo-mer], 2021-03-06T13:23:45Z
 
-[install process](https://github.com/exo-mer/2021-research-os-OpenBSD/installation-process-for-OpenBSD.md)
+[install process](https://github.com/exo-mer/2021-research-os-OpenBSD/blob/main/installation-process-for-OpenBSD.md)
 
 ## preparing an installation media (USB stick)
 The following steps are showing how to download and create a bootable usb stick. A General check for architecture and boot media are required (for this example the architecture is amd64 and installation media is a USB flash drive). Proceed to download an appropriate image (install68.img) and the SHA256, SHA256.sig files for later integrity checks.
@@ -84,7 +84,7 @@ After unlocking the drive a sdX will be assigned to the drive as new device node
 ```
 root $ exit
 ```
-### installation process
+## installation
 Proceeding with the installation is not that hard. Making good choices is supported by several sources - details in:
 + [OpenBSD 5.5 Installation Notes](https://ijsbeer.org:81/openbsd-55-installation-notes.html)
 + [OpenBSD 6.8 FAQ - Installation Guide](https://www.openbsd.org/faq/faq4.html) 
@@ -111,7 +111,7 @@ root $ sh /etc/netstart
 ```
 In a good environment, performing these steps will lead to a wireless connection.
 
-### adding Gnome
+## adding Gnome
 Having a GUI is nice! - by adding these packages, the Gnome environment will be installed.
 ```
 root $ pkg_add gnome gnome-extra gdm chromium nano
@@ -124,7 +124,7 @@ And the USER be added to the staff group. By altering the login.conf the memory 
 ```
 root $ nano /etc/login.conf	# edit staff section > datasize-cur = 8192; maxproc-max = 2048; maxproc-cur = 1024
 ```
-### power management
+## power management
 Having the lid close leading to suspension is great.
 ```
 root $ echo 'apmd_flags="-A -z 10"' >> /etc/rc.conf.local	# suspend with 10% battery power
@@ -132,7 +132,7 @@ root $ echo 'machdep.lidaction=1' >> /etc/sysctl.conf		# 1 for suspend, 2 for hi
 root $ rcctl start apmd
 ```
 
-### ports
+## ports
 Binary packages are great - sometimes building packages is prefered. To get the ports for the current release running will work.
 ```
 user $ cd /tmp
@@ -163,7 +163,7 @@ searching ports will work as the following shows.
 root $ make search key=gcc
 ```
 
-### build gcc
+## build gcc
 To build and install the GNU Compiler Collection changing the directory and some tea is required.
 ```
 root $ cd /usr/ports/lang/gcc
