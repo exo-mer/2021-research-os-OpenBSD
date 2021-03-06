@@ -170,7 +170,7 @@ root $ cd /usr/ports/lang/gcc
 root $ make
 root $ make install
 ```
-After the compilation has finished - the software will be installed to directories accordingly (gcc, g++, g95 - checking the documentation for binaries might be helpful). 
+After the compilation has finished - the software will be installed to directories accordingly; gcc, g++, gfortran - check [GCC](https://gcc.gnu.org/wiki). 
  
 ###### Thanks for your visit!
 ###### If you like this document, consider to share the url above or give it a star.
